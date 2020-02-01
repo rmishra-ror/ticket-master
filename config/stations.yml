@@ -1,0 +1,24 @@
+stations:
+  - Chennai Beach
+  - Chennai Fort
+  - Chennai Park
+  - Chennai Egmore
+  - Chetpet
+  - Nungambakkam
+  - Kodambakkam
+  - Mambalam
+  - Saidapet
+  - Guindy
+  - St. Thomas Mount
+  - Pazhavanthangal
+  - Meenambakkam
+  - Trisulam
+  - Pallavaram
+  - Chromepet
+  - Tambaram Sanatorium
+  - Tambaram
+price:
+  base_price: 10
+  no_of_stations_for_base_price: 5
+  extra_price: 5
+  no_of_stations_for_extra_price: 5
