@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
 RSpec.describe 'TicketPrinter' do
   before do
-    @ticket = Ticket.new('Guindy', 'Chennai Fort')
-    @printer = TicketPrinter.new(@ticket)
+    @tc = TicketCollector.new
+    @tc.genrate_ticket('Guindy', 'Chennai Fort')
+    @ticket = @tc.ticket
+    @printer = TicketPrinter.new(@tc)
   end
   it 'should delegate source to ticket' do
     expect(@printer.source).to eq(@ticket.source)
@@ -11,12 +15,12 @@ RSpec.describe 'TicketPrinter' do
     expect(@printer.destination).to eq(@ticket.destination)
   end
 
-  it 'should delegate no_of_stations to ticket' do
-    expect(@printer.no_of_stations).to eq(@ticket.no_of_stations)
+  it 'should delegate no_of_stations to ticket collector' do
+    expect(@printer.no_of_stations).to eq(@tc.no_of_stations)
   end
 
-  it 'should delegate total_price to ticket' do
-    expect(@printer.total_price).to eq(@ticket.total_price)
+  it 'should delegate total_price to ticket collector' do
+    expect(@printer.total_price).to eq(@tc.total_price)
   end
 
   it 'should print ticket receipt' do

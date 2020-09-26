@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 require 'forwardable'
 class TicketPrinter
-  attr_accessor :ticket
+  attr_accessor :tc, :ticket
   extend Forwardable
-  def_delegators :@ticket, :source, :destination, :no_of_stations, :total_price
+  def_delegators :@tc, :no_of_stations, :total_price
+  def_delegators :@ticket, :source, :destination
 
-
-  def initialize(ticket)
-    @ticket = ticket
+  def initialize(ticket_collector)
+    @tc = ticket_collector
+    @ticket = tc.ticket
   end
 
   def receipt

@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'forwardable'
 gem 'pry-byebug'
 gem 'require_all'
 gem 'rspec'
-gem 'forwardable'
